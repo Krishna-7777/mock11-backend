@@ -1,9 +1,11 @@
 const express= require("express")
+const cors=require("cors")
 const { noticeRoutes } = require("./routes/notice.routes")
 const { connect } = require("./config/db")
 
 const app=express()
 
+app.use(cors('*'))
 app.use(express.json())
 
 app.get('/',(ask,give)=>{
